@@ -1,0 +1,11 @@
+package dip.goodDesign;
+
+public class Main {
+    public static void main(String[] args) {
+        Order order = new Order("ORD-101","customer@gmail.com","9876543210");
+
+        OrderConformationSender sender  = new EmailConformationSender();
+        OrderService orderService = new OrderService(sender);
+        orderService.placeOrder(order);
+    }
+}
